@@ -1,0 +1,121 @@
+/* Общие настройки */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #999;
+    color: #1d1d1f;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Заголовки */
+h1, h2 {
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 20px;
+}
+
+/* Навигация */
+header nav {
+    margin-bottom: 30px;
+}
+header nav a {
+    color: #0071e3;
+    text-decoration: none;
+    margin-right: 16px;
+    font-weight: 500;
+}
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Формы */
+form {
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="datetime-local"],
+form textarea {
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 15px;
+    border: 1px solid #d1d1d6;
+    border-radius: 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+form textarea {
+    resize: vertical;
+    height: 80px;
+}
+
+form button {
+    background-color: #0071e3;
+    color: white;
+    padding: 10px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background-color: #005ec2;
+}
+
+/* Таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e5ea;
+    text-align: left;
+}
+th {
+    background-color: #f9f9fa;
+}
+
+/* Ссылки действий */
+a {
+    color: #0071e3;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Сообщения */
+.flash {
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+.flash.success {
+    background-color: #d1f2e6;
+    color: #135846;
+}
+.flash.danger {
+    background-color: #fde2e2;
+    color: #b91c1c;
+}
+.flash.warning {
+    background-color: #fff8db;
+    color: #7c6f00;
+}
