@@ -46,7 +46,7 @@ body {
     position: absolute;
     left: 0; 
     right: 0;
-    margin: 50px auto;
+    margin: 0 auto 50px auto;
 }
 
 /* Заголовки */
@@ -87,21 +87,37 @@ form {
     margin: 50px auto;
 }
 
+input::placeholder, textarea::placeholder {
+    color: #fff;
+}
+
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
 form input[type="datetime-local"],
 form textarea {
     width: 100%;
-    padding: 10px 14px;
+    padding: 20px 14px;
     margin-bottom: 15px;
     border: 1px solid #d1d1d6;
-    border-radius: 12px;
-    font-size: 16px;
+    border-radius: 5px;
+    font-size: 14px;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: transparent;
+    color: #fff;
     font-family: 'Mont-light', sans-serif;
 }
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator
+    {
+        color: rgba(0, 0, 0, 0);
+        opacity: 1;
+        background-image: url("../media/calendar.svg");
+        background-repeat: no-repeat;
+        background-position: 100% center;
+        background-size: 20px;
+        cursor: pointer;
+    }
 
 form textarea {
     resize: vertical;
@@ -109,42 +125,22 @@ form textarea {
 }
 
 form button {
-    background-color: #0071e3;
+    display: block;
+    max-width: 200px;
+    margin: 0 auto;
+    background-color: transparent;
     color: white;
-    padding: 10px 24px;
+    padding: 10px 35px;
     font-size: 16px;
-    border: none;
-    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
+    font-family: 'Mont-light', sans-serif;
 }
 
 form button:hover {
-    background-color: #005ec2;
-}
-
-/* Таблицы */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-th, td {
-    padding: 12px;
-    border-bottom: 1px solid #e5e5ea;
-    text-align: left;
-}
-th {
-    background-color: #f9f9fa;
-}
-
-/* Ссылки действий */
-a {
-    color: #0071e3;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
+    background-color: #35393d;
 }
 
 /* Сообщения */
@@ -164,4 +160,42 @@ a:hover {
 .flash.warning {
     background-color: #fff8db;
     color: #7c6f00;
+}
+
+.active-tasks {
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    margin: 10px 10px 50px 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.active-task-title {
+    font-size: 14px;
+}
+
+.active-task-doin {
+    padding: 10px;
+}
+
+.active-task-doin a {
+    background-color: transparent;
+    color: white;
+    padding: 10px 35px;
+    font-size: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background .3s linear;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.active-task-doin a:hover {
+    background-color: #35393d;
+}
+
+.active-task-item {
+    padding: 10px;
 }

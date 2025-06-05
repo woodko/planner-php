@@ -22,7 +22,9 @@ $tasks = $stmt->fetchAll();
     <meta charset="UTF-8">
     <title>Мои задачи</title>
     <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous" defer></script>
 </head>
 <body>        
     <header>
@@ -40,28 +42,25 @@ $tasks = $stmt->fetchAll();
             <input type="datetime-local" name="due_date" required>
             <button type="submit">Добавить</button>
         </form>
-
         <h2>Активные задачи</h2>
         <?php if (count($tasks)): ?>
-            <table>
-                <tr>
-                    <th>Название</th>
-                    <th>Описание</th>
-                    <th>Срок</th>
-                    <th>Действия</th>
-                </tr>
-                <?php foreach ($tasks as $task): ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($task['title']); ?></td>
-                        <td><?php echo htmlspecialchars($task['description']); ?></td>
-                        <td><?php echo $task['due_date']; ?></td>
-                        <td>
-                            <a href="complete.php?id=<?php echo $task['id']; ?>">✅ Выполнить</a> |
-                            <a href="delete.php?id=<?php echo $task['id']; ?>" onclick="return confirm('Удалить задачу?');">🗑 Удалить</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </table>
+            <?php foreach ($tasks as $task): ?>
+                <div class="active-tasks row justify-content-center align-items-center">
+                    <div class="active-task-title col-lg-6 active-task-item">
+                        <?php echo $task['due_date']; ?>
+                    </div>
+                    <div class="active-task-desc col-lg-6 active-task-item">
+                        <?php echo htmlspecialchars($task['title']); ?>
+                    </div>
+                    <!-- <div class="active-task-date col-lg-6 active-task-item">
+                        <?php echo htmlspecialchars($task['description']); ?>
+                    </div> -->
+                    <div class="active-task-doin col-lg-6 active-task-item">
+                        <a href="complete.php?id=<?php echo $task['id']; ?>">Выполнить</a>
+                        <a href="delete.php?id=<?php echo $task['id']; ?>" onclick="return confirm('Удалить задачу?');">Удалить</a> 
+                    </div>
+                </div>
+            <?php endforeach; ?>
         <?php else: ?>
             <p>Нет активных задач.</p>
         <?php endif; ?>
