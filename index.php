@@ -24,49 +24,52 @@ $tasks = $stmt->fetchAll();
     <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<div class="container">
+<body>        
     <header>
-        <h1>📋 Мои задачи</h1>
         <nav>
-            <a href="profile.php">👤 Профиль</a> |
-            <a href="archive.php">📁 Архив</a> |
-            <a href="logout.php">🚪 Выйти</a>
+            <a href="profile.php">Профиль</a>
+            <a href="archive.php"> Архив</a>
+            <a href="logout.php"> Выйти</a>
         </nav>
     </header>
+    <div class="container">
+        <form method="post" action="add_task.php">
+            <h2>Добавить задачу</h2>
+            <input type="text" name="title" placeholder="Название" required>
+            <textarea name="description" placeholder="Описание"></textarea>
+            <input type="datetime-local" name="due_date" required>
+            <button type="submit">Добавить</button>
+        </form>
 
-    <form method="post" action="add_task.php">
-        <h2>Добавить задачу</h2>
-        <input type="text" name="title" placeholder="Название" required>
-        <textarea name="description" placeholder="Описание"></textarea>
-        <input type="datetime-local" name="due_date" required>
-        <button type="submit">Добавить</button>
-    </form>
-
-    <h2>📌 Активные задачи</h2>
-    <?php if (count($tasks)): ?>
-        <table>
-            <tr>
-                <th>Название</th>
-                <th>Описание</th>
-                <th>Срок</th>
-                <th>Действия</th>
-            </tr>
-            <?php foreach ($tasks as $task): ?>
+        <h2>Активные задачи</h2>
+        <?php if (count($tasks)): ?>
+            <table>
                 <tr>
-                    <td><?php echo htmlspecialchars($task['title']); ?></td>
-                    <td><?php echo htmlspecialchars($task['description']); ?></td>
-                    <td><?php echo $task['due_date']; ?></td>
-                    <td>
-                        <a href="complete.php?id=<?php echo $task['id']; ?>">✅ Выполнить</a> |
-                        <a href="delete.php?id=<?php echo $task['id']; ?>" onclick="return confirm('Удалить задачу?');">🗑 Удалить</a>
-                    </td>
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th>Срок</th>
+                    <th>Действия</th>
                 </tr>
-            <?php endforeach; ?>
-        </table>
-    <?php else: ?>
-        <p>Нет активных задач.</p>
-    <?php endif; ?>
-</div>
+                <?php foreach ($tasks as $task): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($task['title']); ?></td>
+                        <td><?php echo htmlspecialchars($task['description']); ?></td>
+                        <td><?php echo $task['due_date']; ?></td>
+                        <td>
+                            <a href="complete.php?id=<?php echo $task['id']; ?>">✅ Выполнить</a> |
+                            <a href="delete.php?id=<?php echo $task['id']; ?>" onclick="return confirm('Удалить задачу?');">🗑 Удалить</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        <?php else: ?>
+            <p>Нет активных задач.</p>
+        <?php endif; ?>
+    </div>
+    <div class="video">
+        <video id="nubexVideo" width="100%" height="100%" loop="" muted="" autoplay="autoplay" playsinline=""> 
+            <source src="media/digits.mp4"></source>
+        </video>
+    </div>
 </body>
 </html>
