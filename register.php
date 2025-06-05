@@ -24,9 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="container">
 <h2>Регистрация</h2>
 <form method="POST">
-    <input name="username" placeholder="Имя пользователя" required><br>
+    <input name="username" type="text" placeholder="Имя пользователя" required><br>
     <input name="email" type="email" placeholder="Email" required><br>
-    <input name="password" type="password" placeholder="Пароль" required><br>
+    <input name="password" type="password" placeholder="Пароль" required><br><br><br>
     <button type="submit">Зарегистрироваться</button>
 </form>
 <?php if (isset($error)) echo "<p>$error</p>"; ?>

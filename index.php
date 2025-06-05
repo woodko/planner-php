@@ -55,7 +55,7 @@ $tasks = $stmt->fetchAll();
                     <!-- <div class="active-task-date col-lg-6 active-task-item">
                         <?php echo htmlspecialchars($task['description']); ?>
                     </div> -->
-                    <div class="active-task-doin col-lg-6 active-task-item">
+                    <div class="active-task-doin col-lg-12 active-task-item">
                         <a href="complete.php?id=<?php echo $task['id']; ?>">Выполнить</a>
                         <a href="delete.php?id=<?php echo $task['id']; ?>" onclick="return confirm('Удалить задачу?');">Удалить</a> 
                     </div>
