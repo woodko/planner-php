@@ -27,34 +27,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Профиль</title>
+    <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous" defer></script>
 </head>
 <body>
     <div class="container">
-    <?php if (basename($_SERVER['PHP_SELF']) != 'index.php'): ?>
-        <a href="index.php" style="
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 10px 18px;
-            background: transparent;
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-            border-radius: 5px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-            transition: all 0.2s ease-in-out;
-            margin: 16px 0;
-        " onmouseover="this.style.background='#35393d'" onmouseout="this.style.background='transparent'">
-            ← Назад
-        </a>
-    <?php endif; ?>
-
+        <?php if (basename($_SERVER['PHP_SELF']) != 'index.php'): ?>
+            <a href="index.php" style="
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 10px 18px;
+                background: transparent;
+                color: #fff;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                text-decoration: none;
+                border-radius: 5px;
+                font-size: 14px;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+                transition: all 0.2s ease-in-out;
+                margin: 16px 0;
+            " onmouseover="this.style.background='#35393d'" onmouseout="this.style.background='transparent'">
+                ← Назад
+            </a>
+        <?php endif; ?>
         <h2>Профиль пользователя</h2>
         <?php if (isset($message)) echo "<div class='alert alert-success'>$message</div>"; ?>
-
         <form method="post">
             <label>Логин: <?php echo htmlspecialchars($user['username']); ?></label><br><br>
             <label>Email: <?php echo htmlspecialchars($user['email']); ?></label><br><br>
