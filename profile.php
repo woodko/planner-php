@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
     <div class="video">
-        <video id="nubexVideo" width="100%" height="100%" loop="" muted="" autoplay="autoplay" playsinline=""> 
+        <video id="nubexVideo" width="100%" height="auto" loop="" muted="" autoplay="autoplay" playsinline=""> 
             <source src="media/digits.mp4"></source>
         </video>
     </div>

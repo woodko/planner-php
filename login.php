@@ -35,6 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </form>
 <?php if (isset($error)) echo "<p>$error</p>"; ?>
 <a href="register.php">Регистрация</a>
+<a href="reset_request.php">Забыли пароль?</a>
+
 </div>
 </body>
 </html>
