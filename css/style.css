@@ -119,6 +119,13 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator
         cursor: pointer;
     }
 
+form input[type="datetime-local"] {
+    display: block;
+    /* width: 50%; */
+    text-align: center;
+    margin: 0 auto 20px auto;
+}    
+
 form textarea {
     resize: vertical;
     height: 80px;

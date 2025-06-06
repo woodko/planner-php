@@ -39,6 +39,7 @@ $tasks = $stmt->fetchAll();
             <h2>Добавить задачу</h2>
             <input type="text" name="title" placeholder="Название" required>
             <textarea name="description" placeholder="Описание"></textarea>
+            <label for="datetime-local">Введите дату задачи</label>
             <input type="datetime-local" name="due_date" required>
             <button type="submit">Добавить</button>
         </form>
