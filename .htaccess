@@ -1,4 +1,4 @@
-Options -Indexes
+<!-- Options -Indexes
 <FilesMatch "\.(php|php5)$">
     SetHandler application/x-httpd-php
-</FilesMatch>
+</FilesMatch> -->
