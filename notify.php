@@ -21,7 +21,8 @@ foreach ($tasks as $task) {
 
     $msg = "🔔 <b>{$task['title']}</b>\n\n"
          . "📝 {$task['description']}\n\n"
-         . "▶️ Начало задачи: {$task['due_date']}";
+         . "▶️ Начало задачи: {$task['due_date']}"
+         . "📌 Дедлайн задачи: {$task['deadline']}";
 
     sendTelegram($task['telegram_chat_id'], $msg);
 

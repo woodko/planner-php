@@ -50,7 +50,8 @@ $tasks = $stmt->fetchAll();
             <?php foreach ($tasks as $task): ?>
                 <div class="active-tasks row justify-content-center align-items-center">
                     <div class="active-task-title col-lg-6 active-task-item">
-                        <?php echo $task['due_date']; ?>
+                        <span>Начать</span> - <?php echo $task['due_date']; ?><br>
+                        <span>Закончить</span> - <?php echo $task['deadline']; ?>
                     </div>
                     <div class="active-task-desc col-lg-6 active-task-item">
                         <?php echo htmlspecialchars($task['title']); ?>
