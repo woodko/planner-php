@@ -37,10 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <a href="register.php">Регистрация</a> | 
         <a href="reset_request.php">Забыли пароль?</a>
     </div>
-    <!-- <div class="video">
+    <div class="video">
         <video id="nubexVideo" loop="" muted="" autoplay="autoplay" playsinline=""> 
-            <source src="media/stars.mp4"></source>
+            <source src="media/stars3.mp4"></source>
         </video>
-    </div> -->
+    </div>
 </body>
 </html>

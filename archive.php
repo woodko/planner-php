@@ -143,10 +143,10 @@ $overdue_tasks = $overdue_stmt->fetchAll();
             <p>Нет просроченных задач.</p>
         <?php endif; ?>
     </div>
-    <!-- <div class="video">
+    <div class="video">
         <video id="nubexVideo" width="100%" height="auto" loop="" muted="" autoplay="autoplay" playsinline=""> 
-            <source src="media/stars.mp4"></source>
+            <source src="media/stars3.mp4"></source>
         </video>
-    </div> -->
+    </div>
 </body>
 </html>
