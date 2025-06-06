@@ -24,8 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = "Пароль слишком короткий.";
     } else {
         $hash = password_hash($new_password, PASSWORD_DEFAULT);
-        $pdo->prepare("UPDATE users SET password_hash = ?, reset_token = NULL, reset_expires = NULL WHERE id = ?")
-            ->execute([$hash, $user['id']]);
+        $pdo->prepare("UPDATE users SET password = ?, reset_token = NULL, reset_expires = NULL WHERE id = ?")
+    ->execute([$hash, $user['id']]);
         header("Location: login.php?reset=success");
         exit;
     }
@@ -47,3 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 </body>
 </html>
+
+
+
+
