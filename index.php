@@ -69,10 +69,10 @@ $tasks = $stmt->fetchAll();
             <p>Нет активных задач</p>
         <?php endif; ?>
     </div>
-    <div class="video">
+    <!-- <div class="video">
         <video id="nubexVideo" loop="" muted="" autoplay="autoplay" playsinline="" preload="none"> 
             <source src="media/stars.mp4"></source>
         </video>
-    </div>
+    </div> -->
 </body>
 </html>

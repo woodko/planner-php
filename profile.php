@@ -62,10 +62,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Сохранить</button>
         </form>
     </div>
-    <div class="video">
+    <!-- <div class="video">
         <video id="nubexVideo" width="100%" height="auto" loop="" muted="" autoplay="autoplay" playsinline=""> 
             <source src="media/stars.mp4"></source>
         </video>
-    </div>
+    </div> -->
 </body>
 </html>
