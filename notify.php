@@ -41,9 +41,8 @@ $deadlineTasks = $deadlineStmt->fetchAll(PDO::FETCH_ASSOC);
 foreach ($deadlineTasks as $task) {
     if (!$task['telegram_chat_id']) continue;
 
-    $msg = "⚠️ <b>{$task['title']}</b>\n\n"
-         . "📝 {$task['description']}\n\n"
-         . "📌 Дедлайн задачи: {$task['deadline']}";
+    $msg = "⚠️ <b>{$task['title']}</b> - время заканчивать задачу\n\n\n"
+         . "📌 Дедлайн: {$task['deadline']}";
 
     sendTelegram($task['telegram_chat_id'], $msg);
 

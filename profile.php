@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label>Email: <?php echo htmlspecialchars($user['email']); ?></label><br><br>
             <label for="telegram_chat_id">Telegram Chat ID для уведомлений:</label><br><br>
             <input type="text" name="telegram_chat_id" value="<?php echo htmlspecialchars($user['telegram_chat_id'] ?? ''); ?>"><br><br>
-            <spam>Свой Chat ID вы можете узнать у бота <strong>userinfobot</strong> в Телеграм</spam><br><br><br>
+            <spam>Свой Chat ID вы можете узнать у бота <strong><a href="tg://resolve?domain=userinfobot">@userinfobot</a></strong> в Телеграм</spam><br><br><br>
             <button type="submit">Сохранить</button>
         </form>
     </div>

@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ->execute([$token, $expires, $user['id']]);
 
         $link = "https://planner.tw1.ru/reset_password.php?token=$token";
-        $subject = "Восстановление пароля";
+        $subject = "Восстановление пароля Планировщик задач";
         $message = "Перейдите по ссылке для восстановления пароля: $link";
 
         mail($email, $subject, $message); // Подключи SMTP, если нужно
@@ -39,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="container">
         <h2>Восстановить пароль</h2>
+        <span style="display: block; text-align: center">Введите свой E-mail, и мы отправим вам ссылку на страницу восстановления</span>
         <form method="POST">
             <input name="email" type="email" placeholder="Ваш Email" required>
             <button type="submit">Отправить ссылку</button>

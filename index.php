@@ -66,7 +66,7 @@ $tasks = $stmt->fetchAll();
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>У тебя нет активных задач</p>
+            <p>Нет активных задач</p>
         <?php endif; ?>
     </div>
     <div class="video">
