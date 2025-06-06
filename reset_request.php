@@ -15,13 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pdo->prepare("UPDATE users SET reset_token = ?, reset_expires = ? WHERE id = ?")
             ->execute([$token, $expires, $user['id']]);
 
-        $link = "https://example.com/reset_password.php?token=$token";
+        $link = "https://planner.tw1.ru/reset_password.php?token=$token";
         $subject = "Восстановление пароля";
         $message = "Перейдите по ссылке для восстановления пароля: $link";
 
         mail($email, $subject, $message); // Подключи SMTP, если нужно
 
-        $msg = "Инструкции отправлены на email.";
+        $msg = "Инструкции отправлены на email. Проверьте папаку СПАМ";
     } else {
         $msg = "Email не найден.";
     }
