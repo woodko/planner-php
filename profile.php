@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="post">
             <label>Логин: <?php echo htmlspecialchars($user['username']); ?></label><br><br>
             <label>Email: <?php echo htmlspecialchars($user['email']); ?></label><br><br>
-            <label for="telegram_chat_id">Telegram Chat ID:</label><br><br>
+            <label for="telegram_chat_id">Telegram Chat ID для уведомлений:</label><br><br>
             <input type="text" name="telegram_chat_id" value="<?php echo htmlspecialchars($user['telegram_chat_id'] ?? ''); ?>"><br><br>
             <spam>Свой Chat ID вы можете узнать у бота <strong>userinfobot</strong> в Телеграм</spam><br><br><br>
             <button type="submit">Сохранить</button>
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     <div class="video">
         <video id="nubexVideo" width="100%" height="auto" loop="" muted="" autoplay="autoplay" playsinline=""> 
-            <source src="media/digits.mp4"></source>
+            <source src="media/stars.mp4"></source>
         </video>
     </div>
 </body>

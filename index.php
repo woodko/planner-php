@@ -43,8 +43,8 @@ $tasks = $stmt->fetchAll();
             <input type="datetime-local" name="due_date" required>
             <button type="submit">Добавить</button>
         </form>
-        <h2>Активные задачи</h2>
         <?php if (count($tasks)): ?>
+            <h2>Активные задачи</h2>
             <?php foreach ($tasks as $task): ?>
                 <div class="active-tasks row justify-content-center align-items-center">
                     <div class="active-task-title col-lg-6 active-task-item">
@@ -63,12 +63,12 @@ $tasks = $stmt->fetchAll();
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>Нет активных задач.</p>
+            <p>У тебя нет активных задач</p>
         <?php endif; ?>
     </div>
     <div class="video">
-        <video id="nubexVideo" width="100%" height="auto" loop="" muted="" autoplay="autoplay" playsinline=""> 
-            <source src="media/digits.mp4"></source>
+        <video id="nubexVideo" loop="" muted="" autoplay="autoplay" playsinline=""> 
+            <source src="media/stars.mp4"></source>
         </video>
     </div>
 </body>

@@ -25,7 +25,7 @@ $overdue_tasks = $overdue_stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>Архив задач</title>
-    <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous" defer></script>
@@ -75,13 +75,29 @@ $overdue_tasks = $overdue_stmt->fetchAll();
 </head>
 <body>
     <div class="container">
-        <?php if (basename($_SERVER['PHP_SELF']) != 'index.php'): ?>
-            <a href="index.php" class="back-link">← Назад</a>
+         <?php if (basename($_SERVER['PHP_SELF']) != 'index.php'): ?>
+            <a href="index.php" style="
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 10px 18px;
+                background: transparent;
+                color: #fff;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                text-decoration: none;
+                border-radius: 5px;
+                font-size: 14px;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+                transition: all 0.2s ease-in-out;
+                margin: 16px 0;
+            " onmouseover="this.style.background='#35393d'" onmouseout="this.style.background='transparent'">
+                ← Назад
+            </a>
         <?php endif; ?>
 
-        <h2>📁 Архив задач</h2>
+        <h2>Архив задач</h2>
 
-        <h3>✅ Выполненные задачи</h3>
+        <h3>Выполненные задачи</h3>
         <?php if (count($done_tasks)): ?>
             <table>
                 <tr>
@@ -131,7 +147,7 @@ $overdue_tasks = $overdue_stmt->fetchAll();
     </div>
     <div class="video">
         <video id="nubexVideo" width="100%" height="auto" loop="" muted="" autoplay="autoplay" playsinline=""> 
-            <source src="media/digits.mp4"></source>
+            <source src="media/stars.mp4"></source>
         </video>
     </div>
 </body>

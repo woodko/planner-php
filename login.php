@@ -26,17 +26,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" href="css/style.css">
 <body>
-<div class="container">
-<h2>Вход</h2>
-<form method="POST">
-    <input name="username" type="text" placeholder="Имя пользователя" required><br>
-    <input name="password" type="password" placeholder="Пароль" required><br>
-    <button type="submit">Войти</button>
-</form>
-<?php if (isset($error)) echo "<p>$error</p>"; ?>
-<a href="register.php">Регистрация</a>
-<a href="reset_request.php">Забыли пароль?</a>
-
-</div>
+    <div class="container">
+        <h2>Вход</h2>
+        <form method="POST">
+            <input name="username" type="text" placeholder="Имя пользователя" required><br>
+            <input name="password" type="password" placeholder="Пароль" required><br>
+            <button type="submit">Войти</button>
+        </form>
+        <?php if (isset($error)) echo "<p>$error</p>"; ?>
+        <a href="register.php">Регистрация</a> | 
+        <a href="reset_request.php">Забыли пароль?</a>
+    </div>
+    <div class="video">
+        <video id="nubexVideo" loop="" muted="" autoplay="autoplay" playsinline=""> 
+            <source src="media/stars.mp4"></source>
+        </video>
+    </div>
 </body>
 </html>
