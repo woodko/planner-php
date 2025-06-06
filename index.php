@@ -70,7 +70,7 @@ $tasks = $stmt->fetchAll();
         <?php endif; ?>
     </div>
     <div class="video">
-        <video id="nubexVideo" loop="" muted="" autoplay="autoplay" playsinline=""> 
+        <video id="nubexVideo" loop="" muted="" autoplay="autoplay" playsinline="" preload="none"> 
             <source src="media/stars.mp4"></source>
         </video>
     </div>
