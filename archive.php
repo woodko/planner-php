@@ -25,8 +25,11 @@ $overdue_tasks = $overdue_stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>Архив задач</title>
-    <!-- <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+    <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous" defer></script>
+    <script src="https://kit.fontawesome.com/259d69c0e0.js" crossorigin="anonymous" defer></script>
     <style>
         table {
             width: 100%;
@@ -72,8 +75,49 @@ $overdue_tasks = $overdue_stmt->fetchAll();
     </style>
 </head>
 <body>
+    <div class="preloader" id="preloader">
+        <div class="preloader__spinner"></div>
+        <div class="preloader__text">Загрузка...</div>
+    </div>  
+    <header>
+        <nav>
+            <a href="index.php">Задачи</a>
+            <a href="profile.php">Профиль</a>
+            <a href="archive.php"> Архив</a>
+            <a href="logout.php"> Выйти</a>
+        </nav>
+    </header>
+   <div class="navigation">
+        <div class="menu-toggle"></div>
+        <ul class="list">
+            <li class="list-item" style="--color: #f44336">
+                <a href="index.php">
+                    <span class="icon"><i class="fa-solid fa-list"></i></span>
+                    <span class="text">Задачи</span>
+                </a>
+            </li>
+            <li class="list-item" style="--color: #f44336">
+                <a href="profile.php">
+                    <span class="icon"><i class="fa-solid fa-circle-user"></i></span>
+                    <span class="text">Профиль</span>
+                </a>
+            </li>
+            <li class="list-item active" style="--color: #ffa117">
+                <a href="archive.php">
+                    <span class="icon"><i class="fa-solid fa-box-archive"></i></span>
+                    <span class="text">Архив</span>
+                </a>
+            </li>
+            <li class="list-item" style="--color: #0fc70f">
+                <a href="logout.php">
+                    <span class="icon"><i class="fa-solid fa-door-open"></i></span>
+                    <span class="text">Выйти</span>
+                </a>
+            </li>
+        </ul>
+    </div>
     <div class="container">
-         <?php if (basename($_SERVER['PHP_SELF']) != 'index.php'): ?>
+         <!-- <?php if (basename($_SERVER['PHP_SELF']) != 'index.php'): ?>
             <a href="index.php" style="
                 display: inline-flex;
                 align-items: center;
@@ -91,10 +135,8 @@ $overdue_tasks = $overdue_stmt->fetchAll();
             " onmouseover="this.style.background='#35393d'" onmouseout="this.style.background='transparent'">
                 ← Назад
             </a>
-        <?php endif; ?>
-
+        <?php endif; ?> -->
         <h2>Архив задач</h2>
-
         <h3>Выполненные задачи</h3>
         <?php if (count($done_tasks)): ?>
             <table>
@@ -148,5 +190,6 @@ $overdue_tasks = $overdue_stmt->fetchAll();
             <source src="media/wat.mp4"></source>
         </video>
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>

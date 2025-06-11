@@ -1,0 +1,387 @@
+@font-face {
+  font-family: 'Mont';
+  src: url('../fonts/MontserratAlternates-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mont-light';
+  src: url('../fonts/MontserratAlternates-Light.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+body {
+    margin: 0;
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
+    font-family: 'Mont-light', sans-serif;
+    background-color: #0B131C;
+    color: #fff;
+    overflow-x: hidden;
+    /* position: relative; */
+}
+
+video {
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    object-fit: cover; 
+}
+
+@media (max-width: 1120px) {
+  .video {
+    display: none;
+}
+}
+
+.container {
+    max-width: 700px;
+    padding: 24px;
+    background-color: rgba(95, 105, 116, 0.3);
+    border-radius: 5px;
+    z-index: 10;
+    position: absolute;
+    left: 0; 
+    right: 0;
+    margin: 50px auto;
+    top: 45%;  
+    transform: translateY(-50%); 
+}
+
+/* Заголовки */
+h1, h2 {
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-right: 20px;
+}
+
+@media (min-width: 1120px) {
+  header {
+    display: none;
+}
+}
+
+/* Навигация */
+header nav {
+    position: relative;
+    margin-top: 30px;
+    z-index: 100;
+    text-align: right;
+}
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 16px;
+    font-weight: 500;
+}
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Формы */
+form {
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #fff;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="datetime-local"],
+form textarea {
+    width: 100%;
+    padding: 20px 14px;
+    margin-bottom: 15px;
+    border: 1px solid #d1d1d6;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #fff;
+    font-family: 'Mont-light', sans-serif;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator
+    {
+        color: rgba(0, 0, 0, 0);
+        opacity: 1;
+        background-image: url("../media/calendar.svg");
+        background-repeat: no-repeat;
+        background-position: 100% center;
+        background-size: 20px;
+        cursor: pointer;
+    }
+
+form input[type="datetime-local"] {
+    display: block;
+    /* width: 50%; */
+    text-align: center;
+    margin: 0 auto 20px auto;
+}    
+
+form textarea {
+    resize: vertical;
+    height: 80px;
+}
+
+form button {
+    display: block;
+    /* max-width: 200px; */
+    margin: 0 auto;
+    background-color: transparent;
+    color: white;
+    padding: 10px 35px;
+    font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Mont-light', sans-serif;
+}
+
+form button:hover {
+    background-color: #35393d;
+}
+
+/* Сообщения */
+.flash {
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+.flash.success {
+    background-color: #d1f2e6;
+    color: #135846;
+}
+.flash.danger {
+    background-color: #fde2e2;
+    color: #b91c1c;
+}
+.flash.warning {
+    background-color: #fff8db;
+    color: #7c6f00;
+}
+
+.active-tasks {
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    margin: 10px 10px 50px 10px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.active-task-doin {
+    padding: 10px;
+}
+
+.active-task-doin a {
+    display: block;
+    background-color: transparent;
+    color: white;
+    padding: 10px 35px;
+    font-size: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background .3s linear;
+    margin: 10px;
+}
+
+.active-task-doin a:hover {
+    background-color: #35393d;
+}
+
+.active-task-item {
+    padding: 10px;
+}
+
+table tbody th {
+    background: transparent !important;
+}
+
+.navigation {
+    position: fixed;
+    inset: 20px 0 20px 20px;
+    width: 75px;
+    min-height: 500px;
+    background-color: rgb(255, 255, 255);
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.navigation.open {
+    width: 250px;
+}
+
+.navigation .menu-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navigation .menu-toggle::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    transform: translateY(-8px);
+    transition: 0.5s;
+}
+
+.navigation.open .menu-toggle::before {
+    transform: translateY(0) rotate(45deg);
+}
+
+.navigation .menu-toggle::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    transform: translateY(8px);
+    transition: 0.5s;
+    box-shadow: 0 -8px 0 #333;
+}
+
+.navigation.open .menu-toggle::after {
+    transform: translateY(0) rotate(-45deg);
+    box-shadow: none;
+}
+
+.navigation ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+        margin-left: -45px;
+}
+
+.navigation ul li {
+    list-style: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.navigation ul li.active {
+    transform: translateX(30px);
+}
+
+.navigation.open ul li.active {
+    transform: translateX(10px);
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    align-items: center;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 55px;
+    height: 55px;
+    line-height: 60px;
+    color: #222;
+    border-radius: 10px;
+    font-size: 1.75em;
+    transition: 0.5s;
+}
+
+.navigation ul li.active a .icon {
+    color: #fff;
+    background-color: var(--color);
+}
+
+.navigation ul li a .icon::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: var(--color);
+    filter: blur(8px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.navigationul li.active a .icon::before {
+    opacity: 0.5;
+}
+
+.navigation ul li a .text {
+    position: relative;
+    padding: 0 15px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    color: #333;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.navigation.open ul li a .text {
+    opacity: 1;
+    visibility: visible;
+}
+
+.navigation ul li.active a .text {
+    color: var(--color);
+}
+
+@media (max-width: 1120px) {
+  .navigation {
+    display: none;
+}
+}

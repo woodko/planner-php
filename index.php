@@ -25,8 +25,13 @@ $tasks = $stmt->fetchAll();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous" defer></script>
+    <script src="https://kit.fontawesome.com/259d69c0e0.js" crossorigin="anonymous" defer></script>
 </head>
-<body>        
+<body>
+    <div class="preloader" id="preloader">
+        <div class="preloader__spinner"></div>
+        <div class="preloader__text">Загрузка...</div>
+    </div>   
     <header>
         <nav>
             <a href="profile.php">Профиль</a>
@@ -34,6 +39,35 @@ $tasks = $stmt->fetchAll();
             <a href="logout.php"> Выйти</a>
         </nav>
     </header>
+    <div class="navigation">
+            <div class="menu-toggle"></div>
+            <ul class="list">
+                <li class="list-item active" style="--color: #f44336">
+                    <a href="index.php">
+                        <span class="icon"><i class="fa-solid fa-list"></i></span>
+                        <span class="text">Задачи</span>
+                    </a>
+                </li>
+                <li class="list-item" style="--color: #f44336">
+                    <a href="profile.php">
+                        <span class="icon"><i class="fa-solid fa-circle-user"></i></span>
+                        <span class="text">Профиль</span>
+                    </a>
+                </li>
+                <li class="list-item" style="--color: #ffa117">
+                    <a href="archive.php">
+                        <span class="icon"><i class="fa-solid fa-box-archive"></i></span>
+                        <span class="text">Архив</span>
+                    </a>
+                </li>
+                <li class="list-item" style="--color: #0fc70f">
+                    <a href="logout.php">
+                        <span class="icon"><i class="fa-solid fa-door-open"></i></span>
+                        <span class="text">Выйти</span>
+                    </a>
+                </li>
+            </ul>
+    </div>
     <div class="container">
         <form method="post" action="add_task.php">
             <h2>Добавить задачу</h2>
@@ -74,5 +108,6 @@ $tasks = $stmt->fetchAll();
             <source src="media/wat.mp4"></source>
         </video>
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
