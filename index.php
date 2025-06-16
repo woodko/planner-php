@@ -39,7 +39,7 @@ $tasks = $stmt->fetchAll();
             <a href="logout.php"> Выйти</a>
         </nav>
     </header>
-    <div class="navigation">
+    <div class="navigation open">
         <div class="menu-toggle"></div>
         <ul class="list">
             <li class="list-item active" style="--color: #BED057">

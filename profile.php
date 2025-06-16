@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a href="logout.php"> Выйти</a>
         </nav>
     </header>
-    <div class="navigation">
+    <div class="navigation open">
         <div class="menu-toggle"></div>
         <ul class="list">
             <li class="list-item" style="--color: #BED057">
