@@ -62,6 +62,13 @@ video {
     transform: translateY(-50%); 
 }
 
+@media (max-width: 1120px) {
+  .container {
+    top: 5%; 
+    transform: none; 
+}
+}
+
 /* Заголовки */
 h1, h2 {
     font-weight: 600;
