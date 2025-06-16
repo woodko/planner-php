@@ -49,25 +49,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="navigation">
         <div class="menu-toggle"></div>
         <ul class="list">
-            <li class="list-item" style="--color: #f44336">
+            <li class="list-item" style="--color: #BED057">
                 <a href="index.php">
                     <span class="icon"><i class="fa-solid fa-list"></i></span>
                     <span class="text">Задачи</span>
                 </a>
             </li>
-            <li class="list-item active" style="--color: #f44336">
+            <li class="list-item active" style="--color: #1AA313">
                 <a href="profile.php">
                     <span class="icon"><i class="fa-solid fa-circle-user"></i></span>
                     <span class="text">Профиль</span>
                 </a>
             </li>
-            <li class="list-item" style="--color: #ffa117">
+            <li class="list-item" style="--color: #D54A27">
                 <a href="archive.php">
                     <span class="icon"><i class="fa-solid fa-box-archive"></i></span>
                     <span class="text">Архив</span>
                 </a>
             </li>
-            <li class="list-item" style="--color: #0fc70f">
+            <li class="list-item" style="--color: #5437F5">
                 <a href="logout.php">
                     <span class="icon"><i class="fa-solid fa-door-open"></i></span>
                     <span class="text">Выйти</span>
