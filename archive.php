@@ -146,7 +146,8 @@ $overdue_tasks = $overdue_stmt->fetchAll();
              <?php foreach ($overdue_tasks as $task): ?>
                 <div class="active-tasks row justify-content-center align-items-center">
                     <div class="active-task-title col-lg-6 active-task-item">
-                        <?= htmlspecialchars($task['due_date']) ?>
+                        <span>Начало</span> - <?= htmlspecialchars($task['due_date']) ?><br>
+                        <span>Дедлайн</span> - <?= htmlspecialchars($task['deadline']) ?>
                     </div>
                     <div class="active-task-title col-lg-6 active-task-item">
                         <?= htmlspecialchars($task['title']) ?>
