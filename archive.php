@@ -143,7 +143,7 @@ $overdue_tasks = $overdue_stmt->fetchAll();
         <h2>Архив задач</h2>
         <h3>В работе / Просроченные задачи</h3>
         <?php if (count($overdue_tasks)): ?>
-             <?php foreach ($done_tasks as $task): ?>
+             <?php foreach ($overdue_tasks as $task): ?>
                 <div class="active-tasks row justify-content-center align-items-center">
                     <div class="active-task-title col-lg-6 active-task-item">
                         <?= htmlspecialchars($task['due_date']) ?>
