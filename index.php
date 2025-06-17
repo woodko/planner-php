@@ -35,6 +35,7 @@ $tasks = $stmt->fetchAll();
     <header>
         <nav>
             <a href="archive.php"> Архив</a>
+            <a href="scrum.php"> Скрам-доска</a>
             <a href="profile.php">Профиль</a>
             <a href="logout.php"> Выйти</a>
         </nav>
@@ -52,6 +53,12 @@ $tasks = $stmt->fetchAll();
                 <a href="archive.php">
                     <span class="icon"><i class="fa-solid fa-box-archive"></i></span>
                     <span class="text">Архив</span>
+                </a>
+            </li>
+            <li class="list-item" style="--color: #D54A27">
+                <a href="scrum.php">
+                    <span class="icon"><i class="fa-solid fa-box-archive"></i></span>
+                    <span class="text">Скрам-доска</span>
                 </a>
             </li>
             <li class="list-item" style="--color: #1AA313">
