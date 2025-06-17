@@ -41,8 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <header>
         <nav>
             <a href="index.php">Задачи</a>
-            <a href="profile.php">Профиль</a>
             <a href="archive.php"> Архив</a>
+            <a href="profile.php">Профиль</a>
             <a href="logout.php"> Выйти</a>
         </nav>
     </header>
@@ -55,16 +55,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <span class="text">Задачи</span>
                 </a>
             </li>
-            <li class="list-item active" style="--color: #1AA313">
-                <a href="profile.php">
-                    <span class="icon"><i class="fa-solid fa-circle-user"></i></span>
-                    <span class="text">Профиль</span>
-                </a>
-            </li>
             <li class="list-item" style="--color: #D54A27">
                 <a href="archive.php">
                     <span class="icon"><i class="fa-solid fa-box-archive"></i></span>
                     <span class="text">Архив</span>
+                </a>
+            </li>
+            <li class="list-item active" style="--color: #1AA313">
+                <a href="profile.php">
+                    <span class="icon"><i class="fa-solid fa-circle-user"></i></span>
+                    <span class="text">Профиль</span>
                 </a>
             </li>
             <li class="list-item" style="--color: #5437F5">
