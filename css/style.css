@@ -58,8 +58,9 @@ video {
     left: 0; 
     right: 0;
     margin: 50px auto;
-    top: 45%;  
+    top: 5%;  
     transform: translateY(-50%); 
+    transform: none; 
 }
 
 @media (max-width: 1120px) {

@@ -45,6 +45,9 @@ $overdue_tasks = $overdue_stmt->fetchAll();
             background: #f1f1f3;
         }
         a.delete-btn {
+            display: block;
+            max-width: 300px;
+            margin: 0 auto;
             background-color: #ff3b30;
             color: white;
             padding: 6px 12px;
@@ -52,6 +55,7 @@ $overdue_tasks = $overdue_stmt->fetchAll();
             text-decoration: none;
             font-size: 14px;
             transition: background-color 0.2s ease;
+            margin: 30px auto 20px auto;
         }
         a.delete-btn:hover {
             background-color: #e22b24;
@@ -137,52 +141,37 @@ $overdue_tasks = $overdue_stmt->fetchAll();
             </a>
         <?php endif; ?> -->
         <h2>Архив задач</h2>
-        <h3>Выполненные задачи</h3>
-        <?php if (count($done_tasks)): ?>
-            <table>
-                <tr>
-                    <th>Задача</th>
-                    <th>Описание</th>
-                    <th>Дата</th>
-                    <th>Удалить</th>
-                </tr>
-                <?php foreach ($done_tasks as $task): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($task['title']) ?></td>
-                        <td><?= htmlspecialchars($task['description']) ?></td>
-                        <td><?= htmlspecialchars($task['due_date']) ?></td>
-                        <td>
-                            <a class="delete-btn" href="delete.php?id=<?= $task['id'] ?>" onclick="return confirm('Удалить задачу?')">Удалить</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </table>
-        <?php else: ?>
-            <p>Нет выполненных задач.</p>
-        <?php endif; ?>
-
         <h3>В работе / Просроченные задачи</h3>
         <?php if (count($overdue_tasks)): ?>
-            <table>
-                <tr>
-                    <th>Задача</th>
-                    <th>Описание</th>
-                    <th>Дата</th>
-                    <th>Удалить</th>
-                </tr>
-                <?php foreach ($overdue_tasks as $task): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($task['title']) ?></td>
-                        <td><?= htmlspecialchars($task['description']) ?></td>
-                        <td><?= htmlspecialchars($task['due_date']) ?></td>
-                        <td>
-                            <a class="delete-btn" href="delete.php?id=<?= $task['id'] ?>" onclick="return confirm('Удалить задачу?')">Удалить</a>
-                        </td>
-                    </tr>
+             <?php foreach ($done_tasks as $task): ?>
+                <div class="active-tasks row justify-content-center align-items-center">
+                    <div class="active-task-title col-lg-6 active-task-item">
+                        <?= htmlspecialchars($task['due_date']) ?>
+                    </div>
+                    <div class="active-task-title col-lg-6 active-task-item">
+                        <?= htmlspecialchars($task['title']) ?>
+                    </div>
+                    <a class="delete-btn" href="delete.php?id=<?= $task['id'] ?>" onclick="return confirm('Удалить задачу?')">Удалить</a>
+                </div>      
                 <?php endforeach; ?>
-            </table>
         <?php else: ?>
             <p>Нет просроченных задач.</p>
+        <?php endif; ?>
+        <h3>Выполненные задачи</h3>
+        <?php if (count($done_tasks)): ?>
+                <?php foreach ($done_tasks as $task): ?>
+                <div class="active-tasks row justify-content-center align-items-center">
+                    <div class="active-task-title col-lg-6 active-task-item">
+                        <?= htmlspecialchars($task['due_date']) ?>
+                    </div>
+                    <div class="active-task-title col-lg-6 active-task-item">
+                        <?= htmlspecialchars($task['title']) ?>
+                    </div>
+                    <a class="delete-btn" href="delete.php?id=<?= $task['id'] ?>" onclick="return confirm('Удалить задачу?')">Удалить</a>
+                </div>      
+                <?php endforeach; ?>
+        <?php else: ?>
+            <p>Нет выполненных задач.</p>
         <?php endif; ?>
     </div>
     <div class="video">
